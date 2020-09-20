@@ -1,9 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
-  </head>
-  <body>
-    {{ page.content }}
-  </body>
-</html>
+<!-- 
+    We can include partials, eg: https://github.com/byrnereese/mkdocs-bootstrap4/blob/master/mkdocs_bootstrap4/base.html#L175
+
+    List of available template variables: Template variable API is available
+-->
+
+{% extends "base.html" %}
+
+{% block css %}
+{% if page.is_homepage %}    
+    <link href="{{ 'css/index.css' | url }}" rel="stylesheet">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">{{ page.content }}</div>
+        </div>
+        {% if page.is_homepage %}
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+            <h3>Articles</h3>
+            {% for link in nav %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
