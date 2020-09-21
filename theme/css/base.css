@@ -2,3 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: rgb(23, 23, 23);
 }
+
+.contacts.contact-icon {
+    max-width: 32px;
+}

@@ -5,3 +5,9 @@ h1 {
 .profile-photo {
     width: 50%
 }
+
+.contact-icon {
+    max-width: 32px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
