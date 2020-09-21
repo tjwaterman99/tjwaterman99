@@ -14,17 +14,24 @@
 
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4 offset-md-4">{{ page.content }}</div>
-        </div>
+        <nav class="navbar navbar-light bg-white mb-4">
+            <a class="navbar-brand" href="/">Home</a>
+        </nav>
         {% if page.is_homepage %}
         <div class="row">
-            <div class="col-md-4 offset-md-4">
-            <h3>Articles</h3>
+            <div class="col-md-6 offset-md-3">
+            <img class="profile-photo rounded-circle mx-auto d-block" src="/img/profile.jpg"></img>
+            <h1 class="my-4">Tom Waterman</h1>
+            {{ page.content }}
+            <!-- <h3>Articles</h3>
             {% for link in nav %}
             <a href="{{ link.url }}">{{ link.title }}</a>
-            {% endfor %}
+            {% endfor %} -->
             </div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col-md-6 offset-md-3">{{ page.content }}</div>
         </div>
         {% endif %}
     </div>
