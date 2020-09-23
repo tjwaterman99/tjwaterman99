@@ -15,3 +15,8 @@ https://newrepublic.com/article/72485/j-school-confidential
 ## Sapiens: A Brief History of Humankind
 
 https://www.ynharari.com/book/sapiens-2/
+
+
+## The Era of Visual Studio Code
+
+https://blog.robenkleene.com/2020/09/21/the-era-of-visual-studio-code/
