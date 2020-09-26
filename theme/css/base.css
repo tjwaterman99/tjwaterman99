@@ -1,6 +1,11 @@
 body {
     font-family: "Crimson", Georgia, "Times New Roman", Times, serif;
     color: rgb(23, 23, 23);
+    background-color: #FAFAFA;
+}
+
+.navbar.navbar-light {
+    background-color: #FAFAFA !important;
 }
 
 .contacts.contact-icon {
