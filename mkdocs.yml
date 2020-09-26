@@ -10,4 +10,4 @@ markdown_extensions:
         emoji_generator: !!python/name:materialx.emoji.to_svg        
 
 nav:
-    - 'newpost.md'    
+    - 'github_codespaces.md'    

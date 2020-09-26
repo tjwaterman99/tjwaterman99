@@ -19,7 +19,7 @@
         </nav>
         {% if page.is_homepage %}
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-lg-8 offset-lg-2 col-xl-4 offset-xl-4">
             <img class="profile-photo rounded-circle mx-auto d-block" src="/img/profile.jpg"></img>
             <h1 class="my-4">Tom Waterman</h1>
             <div class="contacts text-center my-2">
@@ -37,15 +37,15 @@
                 </span>
             </div>
             {{ page.content }}
-            <!-- <h3>Articles</h3>
+            <h3>Articles</h3>
             {% for link in nav %}
             <a href="{{ link.url }}">{{ link.title }}</a>
-            {% endfor %} -->
+            {% endfor %}
             </div>
         </div>
         {% else %}
         <div class="row">
-            <div class="col-md-6 offset-md-3">{{ page.content }}</div>
+            <div class="col-lg-8 offset-lg-2 col-xl-5 offset-xl-3">{{ page.content }}</div>
         </div>
         {% endif %}
     </div>
