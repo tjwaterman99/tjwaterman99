@@ -2,6 +2,8 @@ body {
     font-family: "Crimson", Georgia, "Times New Roman", Times, serif;
     color: rgb(23, 23, 23);
     background-color: #FAFAFA;
+    font-size: 20px;
+    line-height: 30px;
 }
 
 .navbar.navbar-light {
