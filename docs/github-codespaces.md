@@ -31,3 +31,5 @@ Now that my project was running, my personal config was set up, and I had deploy
 - I could find the pricing and here's how it compares to running my own dev server. 
 
 - 64g of space available, not huge. I imagine they'll offer the option of more if you ever need it.
+
+- Currently the beta versions of codespace with 2 CPUs and limited RAM just isn't great for any data processing work.
