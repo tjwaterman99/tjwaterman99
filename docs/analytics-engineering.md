@@ -4,6 +4,8 @@ In one sentence, I think analytics engineering is:
 
 Helping organizations extract value from their data, through collecting, organizing, and interpreting.
 
+From one of the founders on stackoverflow: https://news.ycombinator.com/item?id=24656588 "Our product, dbt (https://www.getdbt.com/), has come to be synonymous with the practice of analytics engineering, defining an entire industry."
+
 ## Interpreting
 
 Interpreting requires lots of local knowledge. Imagine your user count increased this quarter by 20%, but previous quarters it was at 10%. What happened? Was it the new marketing campaigns?
@@ -30,3 +32,4 @@ The simplest solution might be to ask the engineers that implemented the automat
 
 Building data pipelines
 Pulling data
+Predictive modelling
