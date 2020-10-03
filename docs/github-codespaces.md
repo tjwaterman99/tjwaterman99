@@ -1,8 +1,8 @@
 # First thoughts on Github Codespaces
 
-I've been looking forward to trying out [Github Codespaces](https://github.com/features/codespaces) since it was announced at Github's yearly developer conference back in May, and was excited to get invited to the beta a few weeks ago. 
+I've been looking forward to trying out [Github Codespaces](https://github.com/features/codespaces) since it was announced at Github's developer conference back in May, and was excited to get invited to the beta a few weeks ago. 
 
-Codespaces are an "on-demand" development server that's [customized for each project](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/configuring-codespaces-for-your-project) through a `devcontainer.json` file. The on-demand devservers also integrate tightly with VS Code, which has become the most popular editor and [may stay that way for a long time](https://blog.robenkleene.com/2020/09/21/the-era-of-visual-studio-code/), and is my personal editor of choice.
+Codespaces are an "on-demand" development server that's [customized for each project](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/configuring-codespaces-for-your-project) through a `devcontainer.json` file. The on-demand devservers also integrate nicely with VS Code, which has become the most popular editor and [may stay that way for a long time](https://blog.robenkleene.com/2020/09/21/the-era-of-visual-studio-code/), and is my personal editor of choice.
 
 Using on-demand environments for a development project is very compelling: getting started developing on a project will be much simpler, and the painful "works on my machine" issue is less likely to occur. On-demand devservers are also much cheaper than dedicated devservers. We're switching to on-demand devservers at Facebook for those reasons, and I expect other companies are doing the same.
 
