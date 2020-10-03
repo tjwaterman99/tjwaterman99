@@ -1,13 +1,30 @@
 body {
     font-family: "Crimson", Georgia, "Times New Roman", Times, serif;
     color: rgb(23, 23, 23);
-    background-color: #FAFAFA;
+    background-color: #ffffff;
     font-size: 20px;
     line-height: 30px;
 }
 
+code {
+    background-color: #F3F4F4;
+    padding: .2em .4em;
+    margin: 0;
+    color:  rgb(23, 23, 23);
+    border-radius: 6px;
+    font-size: 85%;
+}
+
+pre {
+    background-color: #F3F4F4;
+    border-radius: 6px;
+    font-size: 75%;
+    padding: 16px;
+    line-height: 1.45;
+}
+
 .navbar.navbar-light {
-    background-color: #FAFAFA !important;
+    background-color: #ffffff !important;
 }
 
 .contacts.contact-icon {
