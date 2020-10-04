@@ -1,28 +1,32 @@
+## [This is water](https://www.youtube.com/watch?v=8CrOL-ydFMI)
+
+By David Foster Wallace.
+
+- Metacognition: why are you thinking what you're thinking?
+- Choosing a way of thinking that reflects your values.
+
 ## [95th percentile isn't that good](https://danluu.com/p95-skill/)
 
 By Dan Luu.
 
-The article's title sounds elitist and condescending, and the author says essentially that on the first line.
+- If being aware of the choices you make about what to think is rare, putting in the practice necessary to change those thoughts is rarer
+- Having values is not the same as living them.
 
-But the point of the article is actually the opposite: anyone that puts sustained, focused effort on improving can reach a comparatively rare ability. 
+## [J-School Confidential](https://newrepublic.com/article/72485/j-school-confidential)
 
-In my experience though, most people simply don't have an interest in sustaining that effort. Improvement is not a goal on their radar, and why should it be? There are plenty of other ways to live a fulfilling life, and there's only so much effort we can sustain in a day. It's almost selfish to focus on self-improvement so much, since that's time you can't spend on other things, like socializing or being with your family.
+By Michael Lewis.
 
-But for me personally, there's a unique kind of satisfaction that comes from doing things "better" than the time before. It can take just a few minutes at the end of the day to reflect on what happened and why it happened, and to think about what you might do differently next time.
+- There's a kind of fake-intellectual exclusivity around "how to think" however.
+- A kind of bizarre language that gets used, "social capital".
 
-## This is water
+## [Sapiens: A Brief History of Humankind](https://www.ynharari.com/book/sapiens-2/)
 
-https://www.youtube.com/watch?v=8CrOL-ydFMI
+By Yuval Noah Harari.
 
-## J-School Confidential: Columbia, the inside story
+- Monkeys with a plan.
 
-https://newrepublic.com/article/72485/j-school-confidential
+## [The Era of Visual Studio Code](https://blog.robenkleene.com/2020/09/21/the-era-of-visual-studio-code/)
 
-## Sapiens: A Brief History of Humankind
+By Roben Kleene.
 
-https://www.ynharari.com/book/sapiens-2/
-
-
-## The Era of Visual Studio Code
-
-https://blog.robenkleene.com/2020/09/21/the-era-of-visual-studio-code/
+- Choosing tools is an important decision. Tools are where we get leverage.
