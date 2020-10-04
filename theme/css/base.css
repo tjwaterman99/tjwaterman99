@@ -2,62 +2,46 @@ body {
     font-family: "Spectral", serif;
     color: rgb(23, 23, 23);
     background-color: #ffffff;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 19px;
+    line-height: 26px;
+}
+
+@media only screen and (min-width: 760px) {
+    .wrapper {
+        width: 724px;
+        margin: auto;
+    }
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: grey;
+}
+
+.nav-link {
+    margin-right: 0.5em;
+    color: grey;
+    text-decoration: none;
+}
+
+.article-link {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.wrapper {
+    padding-top: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 h1 {
-    text-align: left;
-}
-
-article {
-    max-width: 36em;
-}
-
-article h1 {
-    margin-bottom: 1em;
-}
-
-blockquote {
-    margin-left: 0.5em;
-    padding-left: 0.5em;
-    padding-right: 1em;
-    margin-right: 2em;
-    font-size: 95%;
-    border-left: 0.15em solid #6a6a6a;
+    line-height: 1.2em;
 }
 
 .contact-icon {
     max-width: 32px;
     margin-left: 4px;
     margin-right: 4px;
-}
-
-.article {
-    width: 720px;
-}
-
-code {
-    background-color: #F3F4F4;
-    padding: .2em .4em;
-    margin: 0;
-    color:  rgb(23, 23, 23);
-    border-radius: 6px;
-    font-size: 85%;
-}
-
-pre {
-    background-color: #F3F4F4;
-    border-radius: 6px;
-    font-size: 75%;
-    padding: 16px;
-    line-height: 1.45;
-}
-
-.navbar.navbar-light {
-    background-color: #ffffff !important;
-}
-
-.contacts.contact-icon {
-    max-width: 32px;
 }
