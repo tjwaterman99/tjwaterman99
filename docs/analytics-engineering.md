@@ -8,7 +8,7 @@ From one of the founders on stackoverflow: https://news.ycombinator.com/item?id=
 
 ## Interpreting
 
-Interpreting requires lots of local knowledge. Imagine your user count increased this quarter by 20%, but previous quarters it was at 10%. What happened? Was it the new marketing campaigns?
+Interpreting requires more domain knowledge than anything else. 
 
 The analytics engineer might know that there was actually an automated QA process that was creating new records in the database, which were essentially bots. Those bots shouldn't be counted in the user growth. They're not just monitoring the data itself, but they're close to the teams working on those projects, so they have the contextual awareness to help with that interpretation.
 

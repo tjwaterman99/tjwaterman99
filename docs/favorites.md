@@ -2,7 +2,7 @@
 
 By Dan Luu.
 
-As the author says in the first line - this sounds elitist, and maybe even condescending (and it's certainly click-baity). 
+The article's title sounds elitist and condescending, and the author says essentially that on the first line.
 
 But the point of the article is actually the opposite: anyone that puts sustained, focused effort on improving can reach a comparatively rare ability. 
 

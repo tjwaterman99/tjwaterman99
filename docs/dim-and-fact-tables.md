@@ -8,7 +8,8 @@ So if you ever want to create your own table in the warehouse, you'll need to de
 
 Unfortunately, Google doesn't provide much help with that decision. Here's what the first results gives:
 
-*A cryptic definition: The fact table contains business facts (or measures), and foreign keys which refer to candidate keys (normally primary keys) in the dimension tables. Contrary to fact tables, dimension tables contain descriptive attributes (or fields) that are typically textual fields (or discrete numbers that behave like text).*
+> **A cryptic definition:**
+> The fact table contains business facts (or measures), and foreign keys which refer to candidate keys (normally primary keys) in the dimension tables. Contrary to fact tables, dimension tables contain descriptive attributes (or fields) that are typically textual fields (or discrete numbers that behave like text).
 
 To be honest, I don't really understand that definition or how to apply it.
 

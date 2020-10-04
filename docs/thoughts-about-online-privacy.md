@@ -2,6 +2,10 @@
 
 - Privacy isn't an absolute standard - there's no algorithm that can decide whether something is "private" or not. People feel differently about privacy, and overall Americans and Europeans are much more culturally concered about privacy than other parts of the world, that have different cultural traditions.
 
+Also important to understand that there are few _legal gaurantees_ about privacy that absolutely limit the United States government. The government can procure a search warrant and access almost anything they want: recording your phone calls, watching your internet traffic, and recording your location.
+
+
+
 ## First party tracking
 
 - How safeway does privacy today, which no one is concerned by: CCTV footage, "club cards" for tracking purchases, also tracking across your credit card number.

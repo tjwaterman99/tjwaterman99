@@ -18,6 +18,15 @@ article h1 {
     margin-bottom: 1em;
 }
 
+blockquote {
+    margin-left: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    margin-right: 2em;
+    font-size: 95%;
+    border-left: 0.15em solid #6a6a6a;
+}
+
 .contact-icon {
     max-width: 32px;
     margin-left: 4px;
