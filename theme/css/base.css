@@ -1,5 +1,6 @@
 body, html {
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -8,6 +9,7 @@ body {
     background-color: #ffffff;
     font-size: 19px;
     line-height: 26px;
+    padding-bottom: 2em;
 }
 
 @media only screen and (min-width: 760px) {
