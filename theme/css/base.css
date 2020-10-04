@@ -10,6 +10,8 @@ body {
     font-size: 19px;
     line-height: 26px;
     padding-bottom: 2em;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 @media only screen and (min-width: 760px) {
@@ -38,8 +40,27 @@ hr {
 
 .wrapper {
     padding-top: 5px;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+pre {
+    margin-left: -16px;
+    margin-right: -16px;
+    font-size: 90%;
+}
+
+pre code {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    background-color: #F8F8F8 !important;    
+}
+
+code {
+    background-color: #F8F8F8;
+    padding: 3px;
+    font-size: 90%;
+    border-radius: 4px;
 }
 
 h1 {
