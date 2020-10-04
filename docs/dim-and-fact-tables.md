@@ -31,16 +31,16 @@ Records can be inserted into fact tables, but once a record has been inserted, i
 
 A dimension table, however, offers no gaurantee that the data it contains will never change. For example, you might be interested in the time that a user from the `dim_users` table last logged in.
 
-```
+```sql
 select last_login_at from dim_users where id=1
-'2020-09-15 12:34:56.987
+'2020-09-15 12:34:56.987'
 ```
 
 But maybe that user will log in again at a later date. Running that same query would then return a different result - the data for that record has changed.
 
-```
+```sql
 select last_login_at from dim_users where id=1
-'2020-09-24 09:08:07.543
+'2020-09-24 09:08:07.543'
 ```
 
 Sometimes people call the data in a dimension table "mutable" or "dynamic," in contrast to the "immutable" or "static" data in a fact table.
