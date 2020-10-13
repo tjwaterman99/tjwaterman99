@@ -4,6 +4,8 @@ In one sentence, I think analytics engineering is:
 
 Helping organizations extract value from their data, through collecting, organizing, and interpreting.
 
+An analogy is to be the manager of a communal workshop: create a destination where people can be a productive as possible, have the tools to do their best work, and contribute back to the workshop themselves.
+
 From one of the founders on stackoverflow: https://news.ycombinator.com/item?id=24656588 "Our product, dbt (https://www.getdbt.com/), has come to be synonymous with the practice of analytics engineering, defining an entire industry."
 
 ## Interpreting
