@@ -4,6 +4,8 @@
     - If you prioritize deep focus, you need to have some level of autonomy. Being completely reliant on someone else for a key piece of information that's blocking your work will disrupt your focus.
     - Complex projects are harder to achieve deep focus: you need input from others.
     - Blocking off time for _being unresponive_. Some people think managers / execs need to prioritize responsiveness, but that's definitely not the case.
+    - Priotizing focus also also means you're more "present" when you are with other people. That helps make them feel important and increases the quality of your contributions.
+    - Handling stress is another distraction. If you're too stretched out on many projects, you won't be able to focus. Need to find a way to feel good aobut what you're prioritizing.
 - Some days are much more productive than others: 
     - you slept well, you're excited.
 - Playing mental tricks with yourself.
