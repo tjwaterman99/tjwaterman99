@@ -2,8 +2,11 @@
 
 By David Foster Wallace.
 
-- Metacognition: why are you thinking what you're thinking?
-- Choosing a way of thinking that reflects your values.
+There's a quote I've heard - but unfortunately I can't find the attribution - and it goes like: 
+
+> If you don't like what you see, change how you're looking at it.
+
+But most of the time we don't reflect on how we're choosing to see the world, or if we do think about it, it's only to justify the viewpoints we've already chosen.
 
 ## [95th percentile isn't that good](https://danluu.com/p95-skill/)
 
