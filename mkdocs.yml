@@ -10,5 +10,6 @@ markdown_extensions:
         emoji_generator: !!python/name:materialx.emoji.to_svg        
 
 nav:
+    - 'data-lakes-vs-data-warehouses.md'
     - 'dim-and-fact-tables.md'
     - 'github-codespaces.md'    
