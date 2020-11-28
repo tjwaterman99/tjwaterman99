@@ -1,3 +1,7 @@
+---
+date: 2020-09-20
+---
+
 # First thoughts on Github Codespaces
 
 I've been looking forward to trying out [Github Codespaces](https://github.com/features/codespaces) since it was announced at Github's developer conference back in May, and was excited to get invited to the beta a few weeks ago. 
