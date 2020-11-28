@@ -1,3 +1,7 @@
+---
+date: 2020-10-15
+---
+
 # Dimension tables and Fact tables
 
 A common question that analysts have when they start working with a data warehouse is: what's the difference between a fact table and a dimension table?

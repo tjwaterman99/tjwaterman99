@@ -1,3 +1,8 @@
+---
+published: true
+date: 2020-11-27
+---
+
 # Data Lakes vs Data Warehouses
 
 Yesterday I read through an interesting discussion on the A16Z blog, "[The Great Data Debate](https://a16z.com/2020/11/12/a16z-podcast-the-great-data-debate/)," about whether data lakes would consume data warehouses or vice versa.
