@@ -10,6 +10,8 @@ markdown_extensions:
         emoji_generator: !!python/name:materialx.emoji.to_svg        
 
 nav:
+    # - 'presenting-analytics-researching-vs-lawyering.md'
+    # - 'what-is-an-analytics-engineer.md'
     - 'data-lakes-vs-data-warehouses.md'
     - 'dim-and-fact-tables.md'
     - 'github-codespaces.md'    
