@@ -35,7 +35,9 @@
         </div>
         <h2>Articles</h2>
         {% for link in nav %}
-        <div><span>{{ link.meta.date }}: </span><a href="{{ link.url }}" class="article-link">{{ link.title }}</a></div>
+        <div class="article-wrapper">
+            <span>{{ link.meta.date }}: </span>
+            <a href="{{ link.url }}" class="article-link">{{ link.title }}</a></div>
         {% endfor %}
         </div>
     </div>
