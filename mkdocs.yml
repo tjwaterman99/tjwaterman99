@@ -14,4 +14,7 @@ nav:
     # - 'what-is-an-analytics-engineer.md'
     - 'data-lakes-vs-data-warehouses.md'
     - 'dim-and-fact-tables.md'
-    - 'github-codespaces.md'    
+    - 'github-codespaces.md'  
+    - 'how-to-find-a-data-science-job-at-a-startup.md'
+    - 'github-announces-codespaces-web-based-ide.md'
+    - 'installing-airflow-on-ubuntu-18.md'
