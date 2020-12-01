@@ -1,5 +1,5 @@
 ---
-date: 2020-12-16
+date: 2019-12-16
 ---
 
 # Installing Airflow 1.10 on Ubuntu 18
