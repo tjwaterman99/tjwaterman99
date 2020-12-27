@@ -12,6 +12,7 @@ markdown_extensions:
 nav:
     # - 'presenting-analytics-researching-vs-lawyering.md'
     # - 'what-is-an-analytics-engineer.md'
+    - 'what-problems-should-be-hard.md'
     - 'data-lakes-vs-data-warehouses.md'
     - 'dim-and-fact-tables.md'
     - 'github-codespaces.md'  
