@@ -1,16 +1,52 @@
+---
+date: 2020-12-30
+---
+
 # Web Scraping with Github Actions
 
 The tools available for building web scrapers have improved significantly since [my very first webscraping project](https://github.com/tjwaterman99/IAAF-Stats) back in 2015.
 
-Maybe the most interesting new tool for building web scrapers is [Github Actions](https://github.com/features/actions), a service for running arbitrary code directly on Github.
+Maybe the most interesting new tool for building web scrapers is [Github Actions](https://github.com/features/actions), a service for scheduling any code you want to run directly on Github.
 
-Using Github actions, you don't have to configure or manage a server yourself. Instead, you can configure Github Actions to run on a schedule, download the data you want to scrape, and save it to your repository. You can then publish the scraped data using [Github releases](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository), making the scraped data easily available for others.
+Using Github actions, you don't have to set up a server to run your scraper every night. Instead, you can configure Github Actions to run your scripts on a schedule, and it automatically starts and stops a server for you. 
 
-I wanted to try this strategy out myself, so I built a [US Box Office Revenues tracker](https://github.com/tjwaterman99/boxofficemojo-scraper) on Github Actions. 
+For a web scraping project, you might have Github actions run a script to scrape the data from a website, and then save save the scraped data to your repository.
 
-Each day Github Actions will run a web scraper that downloads the latest revenue data from boxofficemojo.com and saves it to the repository. It then parses the scraped data and publishes a polished dataset that's easy to download from a single url on the project's [releases page](https://github.com/tjwaterman99/boxofficemojo-scraper/releases). 
+Github actions is also free to use for public repositories, so building a web scraper won't cost any money. That said, there are certain limits: you can run your scripts for 3,000 minutes per month, no individual file in your repo can be larger than 100MB, and the total repository can not be larger than 10GB. 
 
-You can try out the polished dataset yourself.
+But that's actually more than enough time and space for even large web scraping projects: with 10GB you can store millions of whole web pages, and billions of parsed web pages.
+
+Github actions is also quite easy to set up, since it uses a yaml file for configuring how to run your script. Here's a simple example:
+
+```yml
+name: Scrape  # The name of your Workflow
+
+on:
+  schedule:  # Tells Github to run this Workflow every night
+    - cron: "23 8 * * *"
+
+jobs:
+  scrape-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2.0.0
+        with:
+          python-version: '3.7'
+      # Tells Github to run the file `scraper.py` from your repository
+      - name: Run Scraper
+        run: python scraper.py scrape
+```
+
+The script that actually downloads the data is just the python file `scraper.py` - you can see that the script is being ran in the last step of the workflow above.
+
+Once you've scraped the data you want, you can then publish that data using [Github releases](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository), making its data easily available for others.
+
+I wanted to try out this strategy myself, so I built a [US Box Office Revenues tracker](https://github.com/tjwaterman99/boxofficemojo-scraper) based on Github actions.
+
+You can download the latest polished dataset yourself.
 
 ```python
 import pandas as pd
@@ -20,24 +56,8 @@ df = pd.read_csv(url, parse_dates=['date'], index_col='id')
 df.head()
 ```
 
-Since that project went so well, I wanted to share more details about how to build a Github Actions web scraper for others that are developing their own web scrapers. 
+The scraper that produces that dataset follows the strategy pretty much exactly: each day Github Actions runs a script that downloads the latest revenue data from boxofficemojo.com and saves it to the repository. Another script then parses the scraped data and publishes a polished dataset that's easy to download from a single url on the project's [releases page](https://github.com/tjwaterman99/boxofficemojo-scraper/releases).
 
-Github actions is also free to use for public repositories, so everything that I'm sharing below doesn't cost any money. That said, there are size limits on the repositories themselves: no individual file in your repo can be larger than 100MB, and the total repository can not be larger than 10GB. But that's actually _more_ than enough space for even large web scraping projects: with 10GB you can store millions of web pages, and billions of parsed web pages.
+Overall I've been very impressed with Github's features - Github actions for running a CI/CD service, managed releases, and now even [Codespaces](https://www.tjwaterman.com/github-codespaces), an on-demand development environment. With other companies like Heroku, Netlify, and Snowflake, it's never been faster or easier to build software.
 
-## 1. Scrape the data with a github action
-
-- Write a script to download your data
-- Schedule the script using Github Action's `scheduled` parameter.
-
-## 2. Commit the scraped data to your repository
-
-- Using git as your "database" works fine for many projects. My project has just ~100MB of data _uncompressed_
-
-## 3. Transform your scraped data with dbt
-
-- Try to keep as much of your business logic in here as possible. 
-- If you don't like SQL, you can skip this step, but using DBT will make it easier to maintain your project
-
-## 4. Publish your data with github releases
-
-- 
+It's genuinely amazing how far developer tools have come since 2015.
