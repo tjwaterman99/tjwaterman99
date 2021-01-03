@@ -79,6 +79,10 @@ h1 {
     line-height: 1.2em;
 }
 
+h2 {
+    font-size: 1.2em;
+}
+
 .contact-icon {
     max-width: 32px;
     margin-left: 4px;
@@ -91,4 +95,10 @@ blockquote  {
     font-style: italic;
     border-left: 2px solid #6E7E85;
     padding-left: 10px;
+}
+
+article img {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%
 }
