@@ -13,6 +13,7 @@ nav:
     # - 'presenting-analytics-researching-vs-lawyering.md'
     # - 'what-is-an-analytics-engineer.md'
     # - 'ci-cd-with-snowflake-and-dbt.md'
+    # - 'giving-feedback-is-hard.md'
     - 'web-scraping-with-github-actions.md'
     - 'what-problems-should-be-hard.md'
     - 'data-lakes-vs-data-warehouses.md'
