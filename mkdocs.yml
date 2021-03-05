@@ -15,6 +15,7 @@ nav:
     # - 'ci-cd-with-snowflake-and-dbt.md'
     # - 'giving-feedback-is-hard.md'
     # - 'crazy-things-I-found-in-my-code.md'
+    - 'thoughts-about-alteryx.md'
     - 'web-scraping-with-github-actions.md'
     - 'what-problems-should-be-hard.md'
     - 'data-lakes-vs-data-warehouses.md'
