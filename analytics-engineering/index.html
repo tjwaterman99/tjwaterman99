@@ -1,0 +1,62 @@
+<!-- 
+    We can include partials, eg: https://github.com/byrnereese/mkdocs-bootstrap4/blob/master/mkdocs_bootstrap4/base.html#L175
+
+    List of available template variables: Template variable API is available
+-->
+
+<!DOCTYPE html lang="en">
+<html>
+  <head>
+    <title>What is analytics engineering? - Tom's Blog</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <script async defer data-domain="tjwaterman.com" src="https://plausible.io/js/plausible.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/github-gist.css" rel="stylesheet">
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+    
+    <nav>
+        <a class="nav-link" href="/">Home</a>
+        <!-- <a class="nav-link" href="/favorites">Favorites</a> -->
+    </nav>
+    
+    <article class="post"><h1 id="what-is-analytics-engineering">What is analytics engineering?</h1>
+<p>In one sentence, I think analytics engineering is:</p>
+<p>Helping organizations extract value from their data, through collecting, organizing, and interpreting.</p>
+<p>An analogy is to be the manager of a communal workshop: create a destination where people can be a productive as possible, have the tools to do their best work, and contribute back to the workshop themselves.</p>
+<p>From one of the founders on stackoverflow: https://news.ycombinator.com/item?id=24656588 "Our product, dbt (https://www.getdbt.com/), has come to be synonymous with the practice of analytics engineering, defining an entire industry."</p>
+<h2 id="interpreting">Interpreting</h2>
+<p>Interpreting requires more domain knowledge than anything else. </p>
+<p>The analytics engineer might know that there was actually an automated QA process that was creating new records in the database, which were essentially bots. Those bots shouldn't be counted in the user growth. They're not just monitoring the data itself, but they're close to the teams working on those projects, so they have the contextual awareness to help with that interpretation.</p>
+<p>Other types of interpreting include not just "local knowledge". Example from FB: tracking sentiment of people that were exposed to FB "brand campaigns." But that's not <em>unique</em> to an analytics engineer.</p>
+<p>So if interpreting is one of the skills associated with analytics engineering, why is it called engineering? Engineering implies some level of building things - what are they building?</p>
+<h2 id="organizing">Organizing</h2>
+<p>They primary way to ensure people avoid the issue with the data mentioned is to have it organized in a way that doesn't require constantly remembering and add custom resolutions to the data. Imagine if everyone at the organization had to implement their own solution to account for those automated users. It's inevitable someone would forget, or doing it in a way that was subtly wrong, or just make a typo.</p>
+<p>Most organizations today organize their data in a system they call a data warehouse.</p>
+<h2 id="collecting">Collecting</h2>
+<p>But there's now another problem - what if there's no reliable way to differentiate those bot users? </p>
+<p>The simplest solution might be to ask the engineers that implemented the automated QA to </p>
+<h2 id="what-analytics-engineering-is-not">What analytics engineering is not</h2>
+<p>Building data pipelines
+Pulling data
+Predictive modelling</p></article>
+    
+
+    </div>
+  </body>
+</html>

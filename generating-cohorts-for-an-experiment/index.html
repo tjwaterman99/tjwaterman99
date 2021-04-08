@@ -1,0 +1,70 @@
+<!-- 
+    We can include partials, eg: https://github.com/byrnereese/mkdocs-bootstrap4/blob/master/mkdocs_bootstrap4/base.html#L175
+
+    List of available template variables: Template variable API is available
+-->
+
+<!DOCTYPE html lang="en">
+<html>
+  <head>
+    <title>How to allocate users to a random cohort for an A/B test - Tom's Blog</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <script async defer data-domain="tjwaterman.com" src="https://plausible.io/js/plausible.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/github-gist.css" rel="stylesheet">
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+    
+    <nav>
+        <a class="nav-link" href="/">Home</a>
+        <!-- <a class="nav-link" href="/favorites">Favorites</a> -->
+    </nav>
+    
+    <article class="post"><h1 id="how-to-allocate-users-to-a-random-cohort-for-an-ab-test">How to allocate users to a random cohort for an A/B test</h1>
+<p>I create <a href="https://api.getcohorts.com">https://api.getcohorts.com</a> because randomly allocating users to a cohort can be tricky. </p>
+<p>Ideally, a function that allocates a user to a random cohort will meet the following requirements:</p>
+<h3 id="the-function-is-idempotent-so-the-same-user-will-be-allocated-to-the-same-cohort-every-time">The function is idempotent, so the same user will be allocated to the same cohort every time.</h3>
+<p>This requirement is necessary because it's likely that the user will be exposed to your experiment multiple times. For example, you might be testing a new image on your website's homepage, and the user will return to the homepage several times. You'll want to make sure they see the same experience each time.</p>
+<p>A simple way to implement an idempotent function would be to randomly assign the user to a cohort, and then cache its result. If the same user ever needs to be assigned to the cohort again, then the result from the cache is returned.</p>
+<pre><code class="python"># requires python 3.8+
+import redis
+import random
+from typing import List
+
+db = redis.Redis()
+
+def allocate(user_id: int, experiment: str, cohorts: List[str]):
+    key = f'experiment-{experiment}-{user_id}'
+    if (cohort := db.get(key)) is not None:
+        return cohort.decode('utf8')
+    else:
+        index = int(random.random() * len(cohorts))
+        cohort = cohorts[index]
+        db.set(key, cohort)
+        return cohort
+</code></pre>
+
+<p>This methodology works very well, but it has the downside of requiring a database.</p>
+<h3 id="the-function-is-stateless-so-there-is-no-need-to-cache-any-results">The function is stateless, so there is no need to cache any results</h3>
+<h3 id="the-function-is-accessible-from-as-many-locations-as-possible">The function is accessible from as many locations as possible</h3>
+<h3 id="the-function-can-be-applied-in-batches-on-a-datawarehouse">The function can be applied in batches on a datawarehouse</h3></article>
+    
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!-- 
+    We can include partials, eg: https://github.com/byrnereese/mkdocs-bootstrap4/blob/master/mkdocs_bootstrap4/base.html#L175
+
+    List of available template variables: Template variable API is available
+-->
+
+<!DOCTYPE html lang="en">
+<html>
+  <head>
+    <title>Web Scraping with Github Actions - Tom's Blog</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <script async defer data-domain="tjwaterman.com" src="https://plausible.io/js/plausible.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/github-gist.css" rel="stylesheet">
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+    
+    <nav>
+        <a class="nav-link" href="/">Home</a>
+        <!-- <a class="nav-link" href="/favorites">Favorites</a> -->
+    </nav>
+    
+    <article class="post"><h1 id="web-scraping-with-github-actions">Web Scraping with Github Actions</h1>
+<p>The tools available for building web scrapers have improved significantly since <a href="https://github.com/tjwaterman99/IAAF-Stats">my very first webscraping project</a> back in 2015.</p>
+<p>Maybe the most interesting new tool for building web scrapers is <a href="https://github.com/features/actions">Github Actions</a>, a service for scheduling any code you want to run directly on Github.</p>
+<p>Using Github actions, you don't have to set up a server to run your scraper every night. Instead, you can configure Github Actions to run your scripts on a schedule, and it automatically starts and stops a server for you. </p>
+<p>For a web scraping project, you might have Github actions run a script to scrape the data from a website, and then save save the scraped data to your repository.</p>
+<p>Github actions is also free to use for public repositories, so building a web scraper won't cost any money. That said, there are certain limits: you can run your scripts for 3,000 minutes per month, no individual file in your repo can be larger than 100MB, and the total repository can not be larger than 10GB. </p>
+<p>But that's actually more than enough time and space for even large web scraping projects: with 10GB you can store millions of whole web pages, and billions of parsed web pages.</p>
+<p>Github actions is also quite easy to set up, since it uses a yaml file for configuring how to run your script. Here's a simple example:</p>
+<pre><code class="yml">name: Scrape  # The name of your Workflow
+
+on:
+  schedule:  # Tells Github to run this Workflow every night
+    - cron: &quot;23 8 * * *&quot;
+
+jobs:
+  scrape-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2.0.0
+        with:
+          python-version: '3.7'
+      # Tells Github to run the file `scraper.py` from your repository
+      - name: Run Scraper
+        run: python scraper.py scrape
+</code></pre>
+
+<p>The script that actually downloads the data is just the python file <code>scraper.py</code> - you can see that the script is being ran in the last step of the workflow above.</p>
+<p>Once you've scraped the data you want, you can then publish that data using <a href="https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository">Github releases</a>, making its data easily available for others.</p>
+<p>I wanted to try out this strategy myself, so I built a <a href="https://github.com/tjwaterman99/boxofficemojo-scraper">US Box Office Revenues tracker</a> based on Github actions.</p>
+<p>You can download the latest polished dataset yourself.</p>
+<pre><code class="python">import pandas as pd
+
+url = 'https://github.com/tjwaterman99/boxofficemojo-scraper/releases/latest/download/revenues_per_day.csv.gz'
+df = pd.read_csv(url, parse_dates=['date'], index_col='id')
+df.head()
+</code></pre>
+
+<p>The scraper that produces that dataset follows the strategy pretty much exactly: each day Github Actions runs a script that downloads the latest revenue data from boxofficemojo.com and saves it to the repository. Another script then parses the scraped data and publishes a polished dataset that's easy to download from a single url on the project's <a href="https://github.com/tjwaterman99/boxofficemojo-scraper/releases">releases page</a>.</p>
+<p>Overall I've been very impressed with Github's features - Github actions for running a CI/CD service, managed releases, and now even <a href="https://www.tjwaterman.com/github-codespaces">Codespaces</a>, an on-demand development environment. With other companies like Heroku, Netlify, and Snowflake, it's never been faster or easier to build software.</p>
+<p>It's genuinely amazing how far developer tools have come since 2015.</p></article>
+    
+
+    </div>
+  </body>
+</html>

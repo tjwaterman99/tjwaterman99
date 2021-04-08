@@ -1,0 +1,104 @@
+body, html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Spectral", serif;
+    color: rgb(23, 23, 23);
+    background-color: #ffffff;
+    font-size: 17px;
+    line-height: 26px;
+    padding-bottom: 2em;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 32px;
+}
+
+@media only screen and (min-width: 760px) {
+    .wrapper {
+        width: 70ch;
+        margin: auto;
+        margin-top: 1em;
+        font-size: 19px;
+    }
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: grey;
+}
+
+.nav-link {
+    margin-right: 0.5em;
+    color: grey;
+    text-decoration: none;
+}
+
+.article-link {
+    display: inline;
+    margin-bottom: 0.5em;
+}
+
+.article-wrapper {
+    margin-bottom: 0.5em;
+}
+
+.wrapper {
+    padding-top: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+pre {
+    margin-left: -16px;
+    margin-right: -16px;
+    font-size: 90%;
+}
+
+pre code {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    background-color: #F8F8F8 !important;    
+}
+
+code {
+    background-color: #F8F8F8;
+    padding: 3px;
+    font-size: 90%;
+    border-radius: 4px;
+    font-style: normal;
+}
+
+h1 {
+    line-height: 1.2em;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+.contact-icon {
+    max-width: 32px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+blockquote  {
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+    font-style: italic;
+    border-left: 2px solid #6E7E85;
+    padding-left: 10px;
+}
+
+article img {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%
+}

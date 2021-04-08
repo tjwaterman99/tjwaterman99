@@ -1,0 +1,76 @@
+<!-- 
+    We can include partials, eg: https://github.com/byrnereese/mkdocs-bootstrap4/blob/master/mkdocs_bootstrap4/base.html#L175
+
+    List of available template variables: Template variable API is available
+-->
+
+<!DOCTYPE html lang="en">
+<html>
+  <head>
+    <title>Dimension tables and Fact tables - Tom's Blog</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <script async defer data-domain="tjwaterman.com" src="https://plausible.io/js/plausible.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/github-gist.css" rel="stylesheet">
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+    
+    <nav>
+        <a class="nav-link" href="/">Home</a>
+        <!-- <a class="nav-link" href="/favorites">Favorites</a> -->
+    </nav>
+    
+    <article class="post"><h1 id="dimension-tables-and-fact-tables">Dimension tables and Fact tables</h1>
+<p>A common question that analysts have when they start working with a data warehouse is: what's the difference between a fact table and a dimension table?</p>
+<p>Those labels often appear as abbreviations prefixed on a table's name, like <code>dim_users</code> or <code>fct_clicks</code>, or sometimes just <code>d_users</code> or <code>f_clicks</code>.</p>
+<p>So if you ever want to create your own table in the warehouse, you'll need to decide which label to use.</p>
+<p>Unfortunately, Google doesn't provide much help with that decision. Here's what the first results gives:</p>
+<blockquote>
+<p><strong>A cryptic definition:</strong>
+The fact table contains business facts (or measures), and foreign keys which refer to candidate keys (normally primary keys) in the dimension tables. Contrary to fact tables, dimension tables contain descriptive attributes (or fields) that are typically textual fields (or discrete numbers that behave like text).</p>
+</blockquote>
+<p>To be honest, I don't really understand that definition or how to apply it.</p>
+<p>So I thought it would be helpful to provide an alternative explanation about fact and dimension tables which is more practical, and which always gives you the right answer.</p>
+<p>The short answer is: a fact table contains records which will never change. Sometimes the data in a fact table "immutable" or "static."</p>
+<p>That means that a fact table will never have someone run an <code>UPDATE</code> query on any of its records. </p>
+<p>So if you look at a specific record in a fact table, you are gauranteed to get back the same result every time, no matter whether you run the query today or a year from now.</p>
+<pre><code># Always returns the same result, because 
+# f_clicks is a fact table
+select * from f_clicks where id=1
+</code></pre>
+
+<p>Records can be inserted into fact tables, but once a record has been inserted, it can never be updated. Records can also never be deleted from fact tables.</p>
+<p>A dimension table, however, offers no gaurantee that the data it contains will never change. For example, you might be interested in the time that a user from the <code>dim_users</code> table last logged in.</p>
+<pre><code class="sql">select last_login_at from dim_users where id=1
+'2020-09-15 12:34:56.987'
+</code></pre>
+
+<p>But maybe that user will log in again at a later date. Running that same query would then return a different result - the data for that record has changed.</p>
+<pre><code class="sql">select last_login_at from dim_users where id=1
+'2020-09-24 09:08:07.543'
+</code></pre>
+
+<p>Sometimes people call the data in a dimension table "mutable" or "dynamic," in contrast to the "immutable" or "static" data in a fact table.</p>
+<p>So to decide if your table is a dimension table or a fact table, you need to answer the question: will the data in my table ever change? </p>
+<p>If you're confident the data will never change, then it's a fact table. Common fact tables include historical records of events, like when a page was viewed, or when an order was placed.</p>
+<p>But if the data in your table will change, then it's a dim table. Common dim tables include information about a user's account, or the contents of an article on their blog.</p></article>
+    
+
+    </div>
+  </body>
+</html>
